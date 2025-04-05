@@ -1,4 +1,3 @@
-import animated from '@midudev/tailwind-animations'
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -17,5 +16,5 @@ export default {
             'pink': '#F4DEBE'
         }
     },
-    plugins: [animated],
+    plugins: [],
 }
