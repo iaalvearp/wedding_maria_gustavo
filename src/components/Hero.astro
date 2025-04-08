@@ -2,7 +2,7 @@
 
 ---
 
-<header class="w-full min-h-screen max-w-3xl relative mx-auto overflow-hidden">
+<header>
     <img src="img/hero.webp" alt="" class="hero">
     <img class="logo" src="assets/logo.png" alt="">
     <span class="vanish-effect"></span>
@@ -37,7 +37,7 @@
         }
 
         .vanish-effect {
-            height: 25vh;
+            height: 30vh;
             width: 100%;
             background: linear-gradient(transparent, #fff);
             position: absolute;
@@ -46,10 +46,10 @@
         
         .pink {
             position: absolute;
-            bottom: -10vh;
-            width: 100%;
+            bottom: -8rem;
+            width: 120%;
             height: auto;
-            opacity: .4;
+            opacity: .5;
         }
 
         @media (width >= 768px) {
@@ -58,10 +58,17 @@
                 width: 17%;
             }
             .vanish-effect {
-                height: 15vh;
+                height: 18vh;
             }
             .pink {
-                bottom: -30vh;
+                bottom: -15rem;
+                width: 100%;
+            }
+        }
+
+        @media (width >= 1080px) {
+            .pink {
+                bottom: -18rem;
             }
         }
 

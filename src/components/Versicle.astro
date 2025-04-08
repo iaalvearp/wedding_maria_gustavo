@@ -1,0 +1,93 @@
+---
+
+---
+
+<section>
+    <img class="pink" src="assets/watercolor-pink.png" alt="">
+    <span class="vanish-effect"></span>
+    <h1>GUSTAVO & MARÍA DE LOS ÁNGELES</h1>
+    <p>A donde tu vayas, yo iré, donde tú vivas,<br>yo viviré; tu pueblo será el mío, tu <br>Dios será mi Dios.</p>
+    <br><strong>Rt 1,16</strong>
+</section>
+
+<style>
+    section {
+        display: grid;
+        place-content: center;
+        width: 100%;
+        height: 10rem;
+        max-width: 48rem;
+        position: relative;
+        overflow: hidden;
+        margin: 0 auto;
+        text-align: center;
+        padding: 1rem 0;
+
+        .pink {
+            position: absolute;
+            left: -4rem;
+            right: 0;
+            top: -4rem;
+            width: 150%;
+            height: auto;
+            opacity: .5;
+            z-index: 0;
+        }
+
+        h1 {
+            font-size: 1.125rem;
+            text-wrap: balance;
+            z-index: 1;
+        }
+
+        p {
+            text-align: center;
+            text-wrap: pretty;
+            font-size: 1rem;
+            line-height: 1.25rem;
+            margin: 0 auto;
+            z-index: 1;
+        }
+
+        strong {
+            z-index: 1;
+        }
+
+        .vanish-effect {
+            height: 5vh;
+            width: 100%;
+            background: linear-gradient(#fff, transparent);
+            position: absolute;
+            top: 0;
+            z-index: -1;
+        }
+
+
+    }
+
+    @media ( width >= 768px ) {
+        section {
+            height: 12rem;
+
+            .pink {
+                top: -12rem;
+                width: 100%;
+            }
+    
+            h1 {
+                font-size: 2rem;
+            }
+    
+            br {
+                margin-top: 2rem;
+            }
+    
+            p {
+                font-size: 1.25rem;
+                line-height: 1.75rem;
+            }
+        }
+        
+    }
+    
+</style>
