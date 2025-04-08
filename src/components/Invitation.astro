@@ -4,13 +4,14 @@
 
 <section>
     <img class="pink" src="assets/watercolor-pink.png" alt="">
+    <img class="center-flower" src="assets/date-calendar-flower.png" alt="">
     <img class="flower-left" src="assets/left-hero-flowers.png" alt="">
     <img class="flower-right" src="assets/right-hero-flowers.png" alt="">
-    <p>Dos personas, dos historias, dos vidas,<br>para comenzar a ser un solo corazón y una<br>sola alma,<br>y caminar por siempre en un mismo sendero<br>y en una misma dirección.</p>
+    <p class="first-p">Dos personas, dos historias, dos vidas,<br>para comenzar a ser un solo corazón y una<br>sola alma,<br>y caminar por siempre en un mismo sendero<br>y en una misma dirección.</p>
     <p>Con gran alegría, compartimos el inicio de<br>una nueva aventura juntos y la consolidación<br>de nuestro amor elevado a sacramento.</p>
     <p>Nosotros,</p>
     <h2>María de los Ángeles Álava Ruiz</h2>
-    <h2>&</h2>
+    <h2 class="and">&</h2>
     <h2>Gustavo Andrés Burgos Peralta</h2>
     <p>con la bendición de Dios, de nuestras<br>familias, hemos querido responder al llamado<br>de una vocación juntos y unirnos en santo<br>matrimonio</p>
 </section>
@@ -20,13 +21,12 @@
         display: grid;
         place-content: center;
         width: 100%;
-        height: auto;
+        height: 100%;
         max-width: 48rem;
         position: relative;
         overflow: hidden;
         margin: 0 auto;
         text-align: center;
-
 
         .pink {
                 position: absolute;
@@ -38,6 +38,58 @@
                 opacity: .5;
                 z-index: 0;
             }
+
+        .center-flower {    
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                top: 0.5rem;
+                width: 3rem;
+                height: auto;
+                z-index: 1;
+            }
+        .flower-left {
+                position: absolute;
+                width: 40vw;
+                height: auto;
+                left: -4rem;
+                top: 4rem;
+                opacity: 0.3;
+                z-index: 0;
+            }
+
+            p {
+                font-size: 1rem;
+                line-height: 1.5rem;
+                letter-spacing: 0.5px;
+            }
+
+            .first-p {
+                margin-top: 7vh;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+                line-height: 2rem;
+                margin: 0.5rem 0;
+                font-weight: 400;
+            }
+
+            .and {
+                margin: 0.5rem 0;
+            }
+
+        .flower-right {
+                position: absolute;
+                width: 40vw;
+                height: auto;
+                right: -4rem;
+                bottom: -3rem;
+                opacity: 0.3;
+                z-index: 0;
+            }
+
     }
     @media ( width >= 768px ) {
         section {
@@ -50,15 +102,17 @@
             }
         }
 
-        @media ( width >= 1024px ) {
-        section {
-            
-            
-            .pink {
-                top: -22rem;
-                left: 0;
-                width: 100%;
-            }
+    }
+    @media ( width >= 1024px ) {
+    section {
+        
+        
+        .pink {
+            top: -22rem;
+            left: 0;
+            width: 100%;
+        }
+
         }
     }
 </style>
