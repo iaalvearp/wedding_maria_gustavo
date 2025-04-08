@@ -4,7 +4,6 @@
 
 <section>
     <img class="pink" src="assets/watercolor-pink.png" alt="">
-    <span class="vanish-effect"></span>
     <h1>GUSTAVO & MARÍA DE LOS ÁNGELES</h1>
     <p>A donde tu vayas, yo iré, donde tú vivas,<br>yo viviré; tu pueblo será el mío, tu <br>Dios será mi Dios.</p>
     <br><strong>Rt 1,16</strong>
@@ -25,10 +24,10 @@
 
         .pink {
             position: absolute;
-            left: -4rem;
+            left: -9rem;
             right: 0;
-            top: -4rem;
-            width: 150%;
+            top: -20vh;
+            width: 190%;
             height: auto;
             opacity: .5;
             z-index: 0;
@@ -53,15 +52,6 @@
             z-index: 1;
         }
 
-        .vanish-effect {
-            height: 5vh;
-            width: 100%;
-            background: linear-gradient(#fff, transparent);
-            position: absolute;
-            top: 0;
-            z-index: -1;
-        }
-
 
     }
 
@@ -71,7 +61,8 @@
 
             .pink {
                 top: -12rem;
-                width: 100%;
+                left: -2rem;
+                width: 120%;
             }
     
             h1 {
@@ -85,6 +76,17 @@
             p {
                 font-size: 1.25rem;
                 line-height: 1.75rem;
+            }
+        }
+
+        @media (width >= 1024px) {
+            section {
+
+                .pink {
+                    width: 100%;
+                    left: 0;
+                    top: -8rem;
+                }
             }
         }
         
