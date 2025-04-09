@@ -4,7 +4,7 @@
 
 <section>
     <picture class="pic-box">
-        <img class="pic-calendary" src="img/calendar.webp" alt="">
+        <img class="pic-calendary" src="img/calendar_cr.webp" alt="">
     </picture>
     <img class="left-calendar-flowers" src="assets/left-calendar-flowers.png" alt="">
     <img class="watercolor-calendar-right" src="assets/watercolor-calendar-right.png" alt="">
@@ -37,7 +37,7 @@
             width: 120%;
             height: auto;
             position: absolute;
-            bottom: 0;
+            right: 0;
         }
     
         .left-calendar-flowers {
@@ -71,16 +71,54 @@
             line-height: 1.5rem;
             letter-spacing: 0.5px;
             text-align: center;
+            margin: 3rem 0;
         }
     }
 
-    @media (max-width: 768px) {
-        p {
-            margin: 3rem 0;
-            z-index: 1;
-            font-size: 1rem;
-            line-height: 1.5rem;
-            letter-spacing: 0.5px;
+    @media (width >= 768px) {
+
+        section {
+
+            .pic-box {
+                height: 22rem;
+            }
+
+            .pic-calendary {
+                width: 100%;
+            }
+
+            .calendar {
+                margin-top: 8rem;
+            }
+
+            .left-calendar-flowers, .watercolor-calendar-right {
+                top: 21rem;
+                max-width: 230px;
+            }
+
+            .left-calendar-flowers {
+                left: -1.75rem;
+            }
+
+            .watercolor-calendar-right {
+                right: -6rem;
+            }
+
+            .date {
+                margin-top: 5rem;
+                max-width: 25rem;
+            }
+
+            .calendar {
+                max-width: 29rem;
+            }
+
+            p {
+                font-size: 1.25rem;
+                line-height: 1.75rem;
+                letter-spacing: 1px;
+                margin-top: 4em;
+            }
         }
     }
 </style>
