@@ -1,4 +1,31 @@
 ---
-
+import LocationCards from "./LocationCards.astro"
 ---
 
+<section>
+    <LocationCards 
+    title="18h00"
+    src="assets/icon-places-church.png"
+    address="Catedral Metropolitana de Guayaquil San Pedro Apostol"
+    href="https://maps.app.goo.gl/gSfZSCiEzdWrSiXz6"
+    />
+    <LocationCards 
+    title="20h30"
+    src="assets/icon-places-event.png"
+    address="Centro de Convenciones Mall del Río Salón Pastaza"
+    href="https://maps.app.goo.gl/QAkS8hbi6PvVVzzs6"
+    />
+</section>
+
+<style>
+    section {
+        width: 90%;
+        max-width: 48rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin: 0 auto;
+        padding:0 0 2rem 0;
+        overflow: hidden;
+    }
+</style>

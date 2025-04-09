@@ -1,0 +1,107 @@
+---
+interface Props {
+    src: string,
+    title: string,
+    hour?: string,
+    location?: string,
+    address: string,
+    href: string
+}
+
+const { src, title, hour, location, address, href } = Astro.props
+---
+
+<article>
+    <picture>
+        <img src={ src } alt="">
+    </picture>
+    <h2>{ title }</h2>
+    <p class="address">{ address }</p>
+    <a href={ href } target="_blank" rel="noopener noreferrer">
+        <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="icon icon-tabler icons-tabler-filled icon-tabler-map-pin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18.364 4.636a9 9 0 0 1 .203 12.519l-.203 .21l-4.243 4.242a3 3 0 0 1 -4.097 .135l-.144 -.135l-4.244 -4.243a9 9 0 0 1 12.728 -12.728zm-6.364 3.364a3 3 0 1 0 0 6a3 3 0 0 0 0 -6z" /></svg>
+    </a>
+</article>
+<style>
+    article {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        picture {
+            display: block;
+            height: 5rem;
+            margin: 0 auto;
+            aspect-ratio: 1/1;
+        }
+        img {
+            height: 100%;
+        }
+        h2 {
+            font-size: 2.5rem; 
+            margin: 2rem 0;
+        }
+        h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+        p {
+            font-size: 1.25rem;
+            width: 90%;
+            margin: 0 auto 1rem;
+        }
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 15rem;
+            padding: 0.25rem 0;
+            margin: 0 auto;
+            border-radius: 0.5rem;
+            background-color: goldenrod;
+            color: #FFF;
+        }
+    }
+
+    @media (width >= 768px) {
+        article {
+            picture {
+                height: 10rem;
+            }
+            h2 {
+                font-size: 3.75rem;
+                
+            }
+            h3 {
+                font-size: 1.875rem;
+            }
+            p {
+                font-size: 2rem;
+                text-wrap: pretty;
+                width: 80%;
+            }
+            .location {
+                font-weight: 600;
+            }
+            .address {
+                margin: 1rem 0;
+            }
+        }
+        @media (width >= 1024px) {
+            article {
+                
+                p {
+                    font-size: 2.5rem;
+                }
+            }
+            
+        }
+    }
+
+</style>
