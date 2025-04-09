@@ -1,0 +1,86 @@
+---
+
+---
+
+<section>
+    <picture class="pic-box">
+        <img class="pic-calendary" src="img/calendar.webp" alt="">
+    </picture>
+    <img class="left-calendar-flowers" src="assets/left-calendar-flowers.png" alt="">
+    <img class="watercolor-calendar-right" src="assets/watercolor-calendar-right.png" alt="">
+    <img class="date" src="assets/date-title.png" alt="">
+    <img class="calendar" src="assets/calendario.png" alt="">
+    <p>Queremos compartir contigo este día especial<br>con quienes han sido parte de nuestra<br>historia y nuestro amor.</p>
+</section>
+
+<style>
+    section {
+        width: 100%;
+        max-width: 48rem;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+
+        .pic-box {
+            width: 100%;
+            height: 12rem;
+            display: block;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+    
+        .pic-calendary {
+            object-fit: cover;
+            width: 120%;
+            height: auto;
+            position: absolute;
+            bottom: 0;
+        }
+    
+        .left-calendar-flowers {
+            width: 30vw;
+            POSITION: absolute;
+            left: -1.25rem;
+            top: 12rem;
+        }
+    
+        .watercolor-calendar-right {
+            width: 30vw;
+            position: absolute;
+            right: -4rem;
+            top: 8rem;
+        }
+    
+        .date {
+            margin: 0 auto;
+            margin-top: 3rem;
+            width: 55vw;
+        }
+    
+        .calendar {
+            width: 60vw;
+            margin: 0 auto;
+            margin-top: 4rem;
+        }
+    
+        p {
+            font-size: 1rem;
+            line-height: 1.5rem;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 768px) {
+        p {
+            margin: 3rem 0;
+            z-index: 1;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+    }
+</style>
