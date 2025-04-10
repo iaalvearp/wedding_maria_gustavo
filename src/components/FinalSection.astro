@@ -1,0 +1,66 @@
+---
+
+---
+
+<section>
+    <img src="img/hero.webp" alt="">
+    <div>
+        <p>Bendito eres, Dios de nuestros padres, y bendito tu nombre por los siglos de los siglos. Permítenos vivir juntos hasta que seamos viejos.Los dos dijeron: ¡Amén, amén!</p>
+        <strong>Tb 8, 5.7b-8</strong>
+    </div>
+</section>
+<style>
+    section {
+        width: 100%;
+        max-width: 48rem;
+        height: 100vh;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: bottom;
+        }
+        div {
+            height: 10rem;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            background-color: var(--brown);
+            z-index: 1;
+            text-align: center;
+            color: #FFF;
+            letter-spacing: 0.5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            font-family: 'Acumin', serif;
+        }
+        p {
+            width: 90%;
+            margin: 0 auto;
+            font-size: 1rem;
+            line-height: 1.25rem;
+            font-style: italic;
+            text-wrap: pretty;
+        }
+        strong {
+            font-weight: 800;
+        }
+    }
+
+    @media (width >= 768px) {
+        section {
+            
+            p {
+                font-size: 1.25rem;
+                line-height: 1.5rem;
+            }
+        }
+    }
+</style>
