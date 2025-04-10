@@ -29,7 +29,7 @@ import LocationCards from "./LocationCards.astro"
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
         margin: 0 auto;
-        padding:0 5% 2rem 5%;
+        padding:0 5% 5rem 5%;
         overflow: hidden;
         box-sizing: border-box;
 
@@ -38,6 +38,7 @@ import LocationCards from "./LocationCards.astro"
             left: -14rem;
             top: -3rem;
             width: 100vw;
+            max-width: 48rem;
             opacity: 0.4;
             z-index: -1;
         }
@@ -46,6 +47,21 @@ import LocationCards from "./LocationCards.astro"
             top: -7rem;
             left: unset;
             right: -14rem;
+        }
+    }
+
+    @media (width >= 768px) {
+        section {
+
+           .wcolor-left {
+                top: -5rem;
+                left: -23rem;
+            }
+            
+            .wcolor-right {
+                top: -12rem;
+                right: -23rem;
+            }
         }
     }
 </style>
