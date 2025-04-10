@@ -6,26 +6,46 @@ import LocationCards from "./LocationCards.astro"
     <LocationCards 
     title="18h00"
     src="assets/icon-places-church.png"
-    address="Catedral Metropolitana de Guayaquil San Pedro Apostol"
+    address="Catedral Metropolitana de Guayaquil San Pedro Apóstol"
     href="https://maps.app.goo.gl/gSfZSCiEzdWrSiXz6"
     />
+    <img class="wcolor-left" src="assets/watercolor-places-left.png" alt="">
     <LocationCards 
     title="20h30"
     src="assets/icon-places-event.png"
     address="Centro de Convenciones Mall del Río Salón Pastaza"
     href="https://maps.app.goo.gl/QAkS8hbi6PvVVzzs6"
     />
+    <img class="wcolor-right" src="assets/watercolor-places-right.png" alt="">
+
 </section>
 
 <style>
     section {
-        width: 90%;
+        width: 100%;
         max-width: 48rem;
+        position: relative;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
         margin: 0 auto;
-        padding:0 0 2rem 0;
+        padding:0 5% 2rem 5%;
         overflow: hidden;
+        box-sizing: border-box;
+
+        .wcolor-left, .wcolor-right {
+            position: absolute;
+            left: -14rem;
+            top: -3rem;
+            width: 100vw;
+            opacity: 0.4;
+            z-index: -1;
+        }
+        
+        .wcolor-right {
+            top: -7rem;
+            left: unset;
+            right: -14rem;
+        }
     }
 </style>
