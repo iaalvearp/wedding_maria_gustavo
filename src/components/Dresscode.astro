@@ -1,0 +1,85 @@
+---
+
+---
+
+<section>
+    <img class="left" src="assets/left-watercolor-dresscode.png" alt="">
+    <h2>Dress Code</h2>
+    <p><span>Nos encantaría verte formal.</span><br>Se recomienda evitar colores<br>como <b>rojo, amarillo, blanco y verde.</b></p>
+    <img class="right" src="assets/right-watercolor-dresscode.png" alt="">
+</section>
+
+<style>
+    section {
+        width: 100%;
+        height: 100%;
+        max-width: 48rem;
+        margin: 0 auto;
+        position: relative;
+        text-align: center;
+        padding: 2rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: var(--brown);
+        overflow: hidden;
+
+        .left, .right {
+            width: 70vw;
+            height: auto;
+            position: absolute;
+            object-fit: cover;
+            object-position: bottom;
+            z-index: -1;
+            opacity: 0.4;
+            left: -5rem;
+        }
+        .right {
+            right: -5rem;
+            left: unset;
+        }
+        h2 {
+            width: 90%;
+            margin: 1.5rem auto 0;
+            font-size: 3.5rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            font-family: 'Minion Roman', serif;
+        }
+        p {
+            margin: 0 auto 1.5rem;
+            font-family: 'Corporate', sans-serif;
+            letter-spacing: 0.5px;
+        }
+        span {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin: 1rem 0 0;
+        }
+        b {
+            font-weight: 800;
+        }
+
+    }
+    @media ( width >= 768px) {
+        section {
+            padding: 4rem 0;
+            h2 {
+                font-size: 5rem;
+            }
+            span {
+                font-size: 2rem;
+            }
+            p {
+                margin: 0.5rem 0 0;
+                font-size: 1.5rem;
+                line-height: 2rem;
+            }
+            .left, .right {
+                width: 50vw;
+                max-width: 24rem;
+            }
+        }
+    }
+</style>
