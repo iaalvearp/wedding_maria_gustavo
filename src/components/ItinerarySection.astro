@@ -86,7 +86,7 @@ import ItemItineraryRight from "./ItemItineraryRight.astro";
             height: 90%;
             inset: 0;
             margin: 4rem auto;
-            padding: 3rem 2rem 3rem;
+            padding: 4rem 2rem;
             background-color: var(--gold);
             z-index: 1;
             overflow: hidden;
@@ -151,6 +151,7 @@ import ItemItineraryRight from "./ItemItineraryRight.astro";
         position: absolute;
         z-index: 0;
         width: 60%;
+        max-width: 460px;
         height: auto;
     }
     .flowers.left-up {
@@ -192,10 +193,36 @@ import ItemItineraryRight from "./ItemItineraryRight.astro";
     
 
     @media ( width >= 768px) {
-        
+        section {
+            
+            picture {
+                height: 23.5rem;            
+            }
 
-        picture {
-            height: 23.5rem;            
+            h2 {
+                font-size: 5rem;
+            }
+            .main-container {
+                margin: 4rem auto 6rem;
+                padding: 5rem 4rem;
+                box-sizing: border-box;
+            }
         }
+        .container_itinerary {
+            .middle {
+                height: 83%;
+            }
+        }
+        
+        .flowers.left-up {
+            top: 21rem;
+        }
+        .flowers.right-up {
+            top: 22rem;
+        }
+        .flowers.down-center {
+            width: 40%;
+        }
+
     }
 </style>
