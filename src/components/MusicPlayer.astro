@@ -1,0 +1,114 @@
+<div id="playerContainer" class="player-container cristal">
+    <svg
+      id="play" 
+      width="28"
+      height="28"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      class="icon-play">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z" />
+    </svg>
+  
+    <svg
+      id="pause" 
+      width="28"
+      height="28"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      class="icon-pause pressed">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M9 4h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h2a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2z" />
+      <path d="M17 4h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h2a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2z" />
+    </svg>
+</div>
+<style>
+    .player-container {
+        position: fixed;
+        top: 80%;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        height: 2rem;
+        width: 2rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        justify-items: center;
+        align-items: center;
+        border-radius: 9999px;
+        color: #fff;
+        outline: 2px solid #fff;
+        transition: all 0.3s;
+        cursor: pointer;
+        opacity: 1;
+        z-index: 50;
+        transform: translateX(490%);
+
+        &:hover {
+            opacity: 1;
+        }
+
+        @media (min-width: 768px) {
+            height: 3rem;
+            width: 3rem;
+            transform: translateX(700%);
+        }
+
+        svg {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            transform: scale(0);
+            transition: all 0.3s;
+
+            &.pressed {
+            transform: scale(1);
+            }
+        }
+        }
+
+        .cristal {
+        background-color: rgba(236, 98, 36, 0.7);
+        backdrop-filter: blur(4px);
+        }
+
+</style>
+  
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btnPlay = document.getElementById('play');
+      const btnPause = document.getElementById('pause');
+      const audio = new Audio('/sounds/music.m4a');
+  
+      const playMusic = () => {
+        if (btnPlay && btnPause) {
+          btnPlay.style.transform = "scale(0)";
+          btnPause.style.transform = "scale(1)";
+          audio.play();
+        }
+      };
+  
+      const pauseMusic = () => {
+        if (btnPlay && btnPause) {
+          audio.pause();
+          btnPlay.style.transform = "scale(1)";
+          btnPause.style.transform = "scale(0)";
+        }
+      };
+  
+      // Inicializa el estado en pausa
+      pauseMusic();
+  
+      // Asigna eventos solo si existen los elementos
+      if (btnPlay) {
+        btnPlay.addEventListener('click', playMusic);
+      }
+  
+      if (btnPause) {
+        btnPause.addEventListener('click', pauseMusic);
+      }
+    });
+  </script>
+  
