@@ -57,4 +57,49 @@
 		src: url('/fonts/SourceSansVariable-Roman.otf') format('otf');
 	}
 
+	.bright-fade {
+		animation: bright 2s ease-in-out;
+	}
+	@keyframes bright {
+		0% {
+			opacity: 0;
+			filter: blur(20px);
+		}
+		10% {
+			opacity: 1;
+			filter: brightness(2) blur(10px);
+		}
+	}
+	.to-return {
+		opacity: 0;
+		transform: translateY(-100%);
+		transition: all 2s ease-in-out;
+	}
+	.return {
+		animation-delay: 1s;
+		transform: translate(0);
+		opacity: 1;
+	}
 </style>
+
+<script>
+	const returns = document.querySelectorAll('.to-return');
+	const options = {
+		root: null,
+		rootMargin: '0px',
+		threshold: 0.5
+	};
+	let observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('return');
+			} else {
+				entry.target.classList.remove('return');
+			}
+		});
+	});
+	returns.forEach((returnElement) => {
+		observer.observe(returnElement);
+		
+	});
+</script>
