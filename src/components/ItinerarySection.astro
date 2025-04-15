@@ -1,78 +1,169 @@
 ---
-import ItemItinerary from "./ItemItinerary.astro";
+import ItemItineraryLeft from "./ItemItineraryLeft.astro";
+import ItemItineraryRight from "./ItemItineraryRight.astro";
 
 
 ---
 
 <section>
-    <picture class="h-full max-h-96 w-full block overflow-hidden">
-        <img class="w-full h-auto object-cover object-center" src="" alt="">
+    <picture>
+        <img src="/img/itinerary_cr.webp" alt="Itinerary" />
     </picture>
-    <article class="w-[95%] md:w-[60%] py-12 mx-auto">
-        <h2 class="to-show font-sweet text-center text-5xl md:text-7xl mb-8 md:mb-10">Itinerario</h2>
-        <div class="grid grid-cols-[1fr_1px_1fr] md:content-center">
-            <div class="flex flex-col gap-16 overflow-hidden">
-                <ItemItinerary 
-                side="left"
-                src=""
-                text="Nuestro Sí"
-                hour="15H30"
-                />
-                <ItemItinerary 
-                side="left"
-                src=""
-                text="Busca tu asiento"
-                hour="19H15"
-                />
-                <ItemItinerary 
-                side="left"
-                src=""
-                text="Brindemos por los novios"
-                hour="20H30"
-                />
-                <ItemItinerary 
-                side="left"
-                src=""
-                text="Empezamos la fiesta"
-                hour="22H00"
-                />
+    <div class="main-container">
+        <h2>Itinirerio</h2>
+        <div class="container_itinerary">
+            <div class="left-side">
+                <ItemItineraryLeft
+                    side="left"
+                    src="assets/ico-itinerary-ring.png"
+                    text="Nuestro Sí"
+                    hour="18H00"/>
+                <ItemItineraryLeft
+                    side="left"
+                    src="assets/ico-itinerary-cups.png"
+                    text="Brindemos"
+                    hour="21H00"/>
+                <ItemItineraryLeft
+                    side="left"
+                    src="assets/ico-itinerary-party.png"
+                    text="Empezamos la fiesta"
+                    hour="22H30"/>
             </div>
-            <div class="flex flex-col items-center">
-                <div class="h-2 w-2 rounded-full bg-text"></div> <!-- circle -->
-                <div class="h-[89%] w-[1px] bg-text"></div> <!-- line -->
-                <div class="h-2 w-2 -translate-y-1 rounded-full bg-text"></div> <!-- circle -->
+            <div class="middle">
+                <div class="circle up"></div>
+                <div class="line"></div>
+                <div class="circle down"></div>
             </div>
-            <div class="flex flex-col justify-evenly overflow-hidden">
-                <ItemItinerary 
-                side="right"
-                src=""
-                text="Recibamos a los novios"
-                hour="19H00"
-                />
-                <ItemItinerary 
-                side="right"
-                src=""
-                text="Piquemos algo mientras esperamos nuestra foto"
-                hour="19H30"
-                />
-                <ItemItinerary 
-                side="right"
-                src=""
-                text="Cena"
-                hour="21H00"
-                />
+            <div class="right-side">
+                <ItemItineraryRight
+                    side="right"
+                    src="assets/ico-itinerary-couple.png"
+                    text="Recibamos a los novios"
+                    hour="20H30"/>
+                <ItemItineraryRight
+                    side="right"
+                    src="assets/ico-itinerary-buffet.png"
+                    text="Cena"
+                    hour="21H15"/>
             </div>
-        </div>
-    </article>
+        </div>        
+        <img class="flowers left-up" src="assets/left_up-itinerary-flower.png" alt="">
+        <img class="flowers right-up" src="assets/right_up-itinerary-flower.png" alt="">
+        <img class="flowers right-center" src="assets/right_center-itinerary-flower.png" alt="">
+        <img class="flowers left-center" src="assets/left_center-itinerary-flower.png" alt="">
+        <img class="flowers left-down" src="assets/left_down-itinerary-flower.png" alt="">
+        <img class="flowers right-down" src="assets/right_down-itinerary-flower.png" alt="">
+        <img class="flowers down-center" src="assets/down_center-itinerary-flower.png" alt="">
+    </div>
 </section>
 
 <style>
     section {
-        display: none;
         width: 100%;
         height: 100%;
-        padding-bottom: 2rem;
-        background-color: var(--color-primary);
-        color: #FFF;
+        max-width: 48rem;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+
+        picture {
+            display: block;
+            height: 12rem;
+            width: 100%;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center; 
+            }
+        }
+
+        .main-container {
+            position: relative;
+            width: 70%;
+            height: 90%;
+            inset: 0;
+            margin: 4rem auto;
+            padding: 3rem 2rem 3rem;
+            background-color: var(--gold);
+            z-index: 1;
+            overflow: hidden;
+
+
+            h2 {
+                font-size: 3.125rem;
+                text-align: center;
+                color: white;
+                margin: 0 auto 3rem;
+                font-weight: 400;
+                font-family: 'Minion Pro', serif;
+                letter-spacing: 0.5px;
+            }
+        }
+    }
+    .container_itinerary {
+        display: grid;
+        grid-template-columns: 1fr 1px 1fr;
+
+        .left-side, .right-side {
+            display: grid;
+        }
+        .left-side {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 1fr);
+        }
+        .right-side {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, 1fr);
+            height: 80%;
+            margin: auto 0;
+        }
+        .middle {
+            grid-row: 1/-1;
+            grid-column: 2/3;
+            height: 82%;
+            width: 1px;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            position: relative;
+
+            .circle {
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background-color: white;
+                position: absolute;
+            }
+
+            .circle.up {
+                top: 0;
+            }
+            .circle.down {
+                bottom: 0;
+            }
+        }
+    }
+
+    .flowers {
+                position: absolute;
+                z-index: 0;
+                width: 100%;
+                height: auto;
+                display: none;
+    }
+    
+
+
+    
+
+    @media ( width >= 768px) {
+        
+
+        picture {
+            height: 23.5rem;            
+        }
     }
 </style>
