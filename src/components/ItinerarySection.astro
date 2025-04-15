@@ -47,14 +47,14 @@ import ItemItineraryRight from "./ItemItineraryRight.astro";
                     hour="21H15"/>
             </div>
         </div>        
-        <img class="flowers left-up" src="assets/left_up-itinerary-flower.png" alt="">
-        <img class="flowers right-up" src="assets/right_up-itinerary-flower.png" alt="">
-        <img class="flowers right-center" src="assets/right_center-itinerary-flower.png" alt="">
-        <img class="flowers left-center" src="assets/left_center-itinerary-flower.png" alt="">
-        <img class="flowers left-down" src="assets/left_down-itinerary-flower.png" alt="">
-        <img class="flowers right-down" src="assets/right_down-itinerary-flower.png" alt="">
-        <img class="flowers down-center" src="assets/down_center-itinerary-flower.png" alt="">
     </div>
+    <img class="flowers left-up" src="assets/left_up-itinerary-flower.png" alt="">
+    <img class="flowers right-up" src="assets/right_up-itinerary-flower.png" alt="">
+    <img class="flowers left-center" src="assets/right_center-itinerary-flower.png" alt="">
+    <img class="flowers right-center" src="assets/left_center-itinerary-flower.png" alt="">
+    <img class="flowers left-down" src="assets/left_down-itinerary-flower.png" alt="">
+    <img class="flowers right-down" src="assets/right_down-itinerary-flower.png" alt="">
+    <img class="flowers down-center" src="assets/down_center-itinerary-flower.png" alt="">
 </section>
 
 <style>
@@ -148,11 +148,43 @@ import ItemItineraryRight from "./ItemItineraryRight.astro";
     }
 
     .flowers {
-                position: absolute;
-                z-index: 0;
-                width: 100%;
-                height: auto;
-                display: none;
+        position: absolute;
+        z-index: 0;
+        width: 60%;
+        height: auto;
+    }
+    .flowers.left-up {
+        top: 10rem;
+        left: -4rem;
+    }
+    .flowers.right-up {
+        top: 11rem;
+        right: -4rem;
+    }
+    .flowers.right-center {
+        top: 50%;
+        right: -2rem;
+        transform: translateY(-25%);
+    }
+    .flowers.left-center {
+        top: 50%;
+        left: -1rem;
+        transform: translateY(-25%);
+    }
+    .flowers.left-down {
+        bottom: 4rem;
+        left: -1rem;
+    }
+    .flowers.right-down {
+        bottom: 4rem;
+        right: -1rem;
+    }
+    .flowers.down-center {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0 auto;
+        width: 50%;
     }
     
 
