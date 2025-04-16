@@ -42,7 +42,6 @@
 		font-weight: 400;
 		font-style: italic;
 		font-display: swap;
-
 	}
 	@font-face {
 		font-family: 'Minion Roman';
@@ -70,29 +69,45 @@
 			filter: brightness(2) blur(10px);
 		}
 	}
-	.to-return {
+	.to-return-up {
+		opacity: 0;
+		transform: translateY(100%);
+		transition: all 1s ease-in-out;
+	}
+	.to-return-down {
 		opacity: 0;
 		transform: translateY(-100%);
 		transition: all 2s ease-in-out;
 	}
 	.return {
+		animation: forwards;
 		animation-delay: 1s;
-		transform: translate(0);
+		transform: translateY(0);
 		opacity: 1;
+	}
+	.return-pink {
+		animation-delay: 1s;
+		animation: return-pink 2s ease;
+	}
+	@keyframes return-pink {
+		0% {
+			opacity: 0;
+			transform: translateY(50%);
+		}
+		100% {
+			opacity: 0.4;
+			transform: translateY(0%);
+		}
 	}
 </style>
 
 <script>
-	const returns = document.querySelectorAll('.to-return');
-	const options = {
-		root: null,
-		rootMargin: '0px',
-		threshold: 0.5
-	};
+	const returns = document.querySelectorAll('.to-return-down, .to-return-up');
 	let observer = new IntersectionObserver((entries) => {
 		entries.forEach((entry) => {
 			if (entry.isIntersecting) {
 				entry.target.classList.add('return');
+				observer.unobserve(entry.target);
 			} else {
 				entry.target.classList.remove('return');
 			}
@@ -100,6 +115,5 @@
 	});
 	returns.forEach((returnElement) => {
 		observer.observe(returnElement);
-		
 	});
 </script>
