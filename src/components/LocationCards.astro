@@ -5,13 +5,14 @@ interface Props {
     hour?: string,
     location?: string,
     address: string,
-    href: string
+    href: string,
+    delay?: string
 }
 
-const { src, title, hour, location, address, href } = Astro.props
+const { src, title, hour, location, address, href, delay } = Astro.props
 ---
 
-<article>
+<article class=`to-return-up ${delay}`>
     <picture>
         <img src={ src } alt="">
     </picture>
