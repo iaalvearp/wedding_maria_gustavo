@@ -99,10 +99,76 @@
 			transform: translateY(0%);
 		}
 	}
+	.infinite-spin {
+		animation: infinite-spin 10s linear infinite;
+	}
+	@keyframes infinite-spin {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+	.flower-one {
+		transform: translate(8rem, 10rem);
+		transition: transform 1s ease-in-out;
+	}
+	.flower-two {
+		transform: translate(-8rem, 10rem);
+		transition: transform 2s ease-in-out;
+	}
+	.flower-three {
+		transform: translate(4rem, -2rem);
+		transition: transform 1s ease-in-out;
+	}
+	.flower-four {
+		transform: translate(-4rem, -2rem);
+		transition: transform 3s ease-in-out;
+	}
+	.flower-five {
+		transform: translate(4rem, -4rem);
+		transition: transform 1s ease-in-out;
+	}
+	.flower-six {
+		transform: translate(-4rem, -2rem);
+		transition: transform 3s ease-in-out;
+	}
+	.flower-seven {
+		transform: translate(0rem, -4rem);
+		transition: transform 2s ease-in-out;
+	}
+	.flower-back {
+		transform: translate(0rem, 0rem);
+	}
+	.to-the-left {
+		transform: translateX(-100%) ;
+		opacity: 0;
+		transition: all 1s ease-in-out;
+	}
+	.to-the-right {
+		transform: translateX(100%);
+		opacity: 0;
+		transition: all 1s ease-in-out;
+	}
+	.go-back {
+		transform: translateX(0%);
+		opacity: 1;
+	}
+	.delay-1 {
+		transition-delay: 0.5s;
+	}
+	.delay-2 {
+		transition-delay: 1s;
+	}
 </style>
 
 <script>
 	const returns = document.querySelectorAll('.to-return-down, .to-return-up');
+	const pics = document.querySelectorAll('.bright');
+	const flowers = document.querySelectorAll('.flowers');
+	const sides = document.querySelectorAll('.to-the-left, .to-the-right');
+	
 	let observer = new IntersectionObserver((entries) => {
 		entries.forEach((entry) => {
 			if (entry.isIntersecting) {
@@ -115,5 +181,47 @@
 	});
 	returns.forEach((returnElement) => {
 		observer.observe(returnElement);
+	});
+
+	let observerPics = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('bright-fade');
+				observerPics.unobserve(entry.target);
+			} else {
+				entry.target.classList.remove('bright-fade');
+			}
+		});
+	});
+	pics.forEach((pic) => {
+		observerPics.observe(pic);
+	});
+
+	let observerFlowers = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('flower-back');
+				observerFlowers.unobserve(entry.target);
+			} else {
+				entry.target.classList.remove('flower-back');
+			}
+		});
+	});
+	flowers.forEach((flower) => {
+		observerFlowers.observe(flower);
+	});
+
+	let observerSides = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('go-back');
+				observerSides.unobserve(entry.target);
+			} else {
+				entry.target.classList.remove('go-back');
+			}
+		});
+	});
+	sides.forEach((side) => {
+		observerSides.observe(side);
 	});
 </script>
